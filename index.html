@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dubai Real Estate for Canadian Investors | BuyUAEProperties</title>
-    <meta name="description" content="Exclusive Dubai property investment opportunities for Canadians. Get curated deal lists, remote buying support, and high-ROI rental strategies.">
+    <meta name="description" content="Exclusive Dubai property investment opportunities for Canadians. Get curated deal lists, remote buying support, and high-ROI rental strategies. Invest in Dubai real estate from Toronto, Vancouver, and across Canada.">
+    <meta name="keywords" content="Dubai real estate for Canadians, invest in Dubai property from Canada, Dubai property investment, Dubai luxury real estate, Dubai rental yield for investors">
+    
+    <!-- OpenGraph for Social Sharing -->
+    <meta property="og:title" content="Dubai Real Estate for Canadian Investors | BuyUAEProperties">
+    <meta property="og:description" content="Secure high-yield property in Dubai with end-to-end support for Canadian investors.">
+    <meta property="og:image" content="https://media.istockphoto.com/id/503984118/photo/wide-panoramic-view-of-dubai-marina-waterfront.jpg?s=612x612&w=0&k=20&c=VM8rrkiLjOD3PC-mCsKiPRAgnZZSpL-YtvL73dLms9Q=">
+    <meta property="og:url" content="https://www.buyuaeproperties.com">
+    <meta property="og:type" content="website">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -134,35 +142,35 @@
                     <h3 class="text-2xl font-bold mb-2">Get the Dubai Investor Deal List</h3>
                     <p class="text-gray-500 text-sm mb-6">Canada Edition • Updated Weekly</p>
                     
-                    <form id="main-form" class="space-y-4">
-                        <input type="text" placeholder="Full Name" class="w-full p-3 border border-gray-200 focus:border-black outline-none" required>
-                        <input type="email" placeholder="Email Address" class="w-full p-3 border border-gray-200 focus:border-black outline-none" required>
+                    <form id="main-form" class="space-y-4" action="https://hooks.zapier.com/hooks/catch/YOUR_ZAPIER_WEBHOOK_ID/" method="POST">
+                        <input type="text" name="full_name" placeholder="Full Name" class="w-full p-3 border border-gray-200 focus:border-black outline-none" required>
+                        <input type="email" name="email" placeholder="Email Address" class="w-full p-3 border border-gray-200 focus:border-black outline-none" required>
                         <div class="flex gap-2">
-                            <select class="p-3 border border-gray-200 bg-white outline-none w-24">
-                                <option>+1</option>
-                                <option>+971</option>
+                            <select name="country_code" class="p-3 border border-gray-200 bg-white outline-none w-24">
+                                <option value="+1">+1 (CAN)</option>
+                                <option value="+971">+971 (UAE)</option>
                             </select>
-                            <input type="tel" placeholder="Phone Number" class="flex-1 p-3 border border-gray-200 focus:border-black outline-none" required>
+                            <input type="tel" name="phone" placeholder="Phone Number" class="flex-1 p-3 border border-gray-200 focus:border-black outline-none" required pattern="[0-9]{10,15}" title="Please enter a valid phone number">
                         </div>
-                        <select class="w-full p-3 border border-gray-200 bg-white outline-none" required>
+                        <select name="investor_type" class="w-full p-3 border border-gray-200 bg-white outline-none" required>
                             <option value="" disabled selected>Investor Type</option>
-                            <option>First-time Overseas Investor</option>
-                            <option>Experienced Portfolio Builder</option>
-                            <option>Holiday Home Buyer</option>
+                            <option value="First-time">First-time Overseas Investor</option>
+                            <option value="Experienced">Experienced Portfolio Builder</option>
+                            <option value="Holiday Home">Holiday Home Buyer</option>
                         </select>
-                        <select class="w-full p-3 border border-gray-200 bg-white outline-none" required>
+                        <select name="budget" class="w-full p-3 border border-gray-200 bg-white outline-none" required>
                             <option value="" disabled selected>Budget Range (USD)</option>
-                            <option>$200k - $500k</option>
-                            <option>$500k - $1M</option>
-                            <option>$1M - $3M</option>
-                            <option>$3M+</option>
+                            <option value="200k-500k">$200k - $500k</option>
+                            <option value="500k-1M">$500k - $1M</option>
+                            <option value="1M-3M">$1M - $3M</option>
+                            <option value="3M+">$3M+</option>
                         </select>
-                        <input type="text" placeholder="Preferred Area (e.g. Marina, Downtown)" class="w-full p-3 border border-gray-200 focus:border-black outline-none">
-                        <select class="w-full p-3 border border-gray-200 bg-white outline-none" required>
+                        <input type="text" name="preferred_area" placeholder="Preferred Area (e.g. Marina, Downtown)" class="w-full p-3 border border-gray-200 focus:border-black outline-none">
+                        <select name="timeline" class="w-full p-3 border border-gray-200 bg-white outline-none" required>
                             <option value="" disabled selected>Timeline</option>
-                            <option>Immediate (Next 30 days)</option>
-                            <option>1-3 Months</option>
-                            <option>Just Researching</option>
+                            <option value="Immediate">Immediate (Next 30 days)</option>
+                            <option value="1-3 Months">1-3 Months</option>
+                            <option value="Researching">Just Researching</option>
                         </select>
                         
                         <button type="submit" class="w-full btn-primary py-4 font-bold uppercase tracking-widest">Get Dubai Deal List</button>
@@ -436,7 +444,7 @@
             <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">Join hundreds of Canadian investors securing high-yield assets in the world's most dynamic real estate market.</p>
             <div class="flex flex-col md:flex-row justify-center gap-6">
                 <a href="#lead-form" class="btn-accent px-12 py-5 font-bold uppercase tracking-widest">Get Deal List</a>
-                <a href="https://wa.me/yournumber" class="border border-white px-12 py-5 font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">WhatsApp Us</a>
+                <a href="https://wa.me/10000000000?text=Hi%20BuyUAEProperties,%20I'm%20a%20Canadian%20investor%20interested%20in%20Dubai%20real%20estate." class="border border-white px-12 py-5 font-bold uppercase tracking-widest hover:bg-white hover:text-black transition" target="_blank">WhatsApp Us</a>
             </div>
         </div>
     </section>
@@ -476,19 +484,49 @@
     </footer>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/yournumber" class="whatsapp-float">
+    <a href="https://wa.me/10000000000?text=Hi%20BuyUAEProperties,%20I'm%20a%20Canadian%20investor%20interested%20in%20Dubai%20real%20estate." class="whatsapp-float" target="_blank">
         <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.672 1.433 5.661 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
     <script>
-        // Simple form handling
-        document.getElementById('main-form').addEventListener('submit', function(e) {
+        // Enhanced form handling for Zapier
+        document.getElementById('main-form').addEventListener('submit', async function(e) {
             e.preventDefault();
-            this.classList.add('hidden');
-            document.getElementById('thank-you').classList.remove('hidden');
+            const form = this;
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
             
-            // In a real scenario, you'd send data to your backend here
-            console.log('Form submitted successfully');
+            submitBtn.innerText = 'SENDING...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            try {
+                // Replace the URL below with your actual Zapier Webhook URL
+                const zapierUrl = 'https://hooks.zapier.com/hooks/catch/YOUR_ZAPIER_WEBHOOK_ID/';
+                
+                // Note: In a real browser environment, Zapier webhooks often require 
+                // a simple POST request. If CORS is an issue, you can use a service 
+                // like Formspree or a backend proxy.
+                
+                await fetch(zapierUrl, {
+                    method: 'POST',
+                    mode: 'no-cors', // Zapier webhooks often work with no-cors
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                form.classList.add('hidden');
+                document.getElementById('thank-you').classList.remove('hidden');
+            } catch (error) {
+                console.error('Submission error:', error);
+                alert('There was an error. Please try again or contact us via WhatsApp.');
+                submitBtn.innerText = originalBtnText;
+                submitBtn.disabled = false;
+            }
         });
     </script>
 </body>
