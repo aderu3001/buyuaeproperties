@@ -10,7 +10,7 @@
   <!-- OpenGraph -->
   <meta property="og:title" content="Dubai & RAK Real Estate for Canadian Investors | BuyUAEProperties">
   <meta property="og:description" content="Curated Dubai + Marjan Island (RAK) opportunities with end-to-end support for Canadian investors.">
-  <meta property="og:image" content="https://media.istockphoto.com/id/503984118/photo/wide-panoramic-view-of-dubai-marina-waterfront.jpg?s=612x612&w=0&k=20&c=VM8rrkiLjOD3PC-mCsKiPRAgnZZSpL-YtvL73dLms9Q=">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1526495124232-a04e1849168c?q=80&w=1600&auto=format&fit=crop">
   <meta property="og:url" content="https://aderu3001.github.io/buyuaeproperties/">
   <meta property="og:type" content="website">
 
@@ -22,7 +22,7 @@
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- ✅ Meta Pixel Code -->
+  <!-- ✅ Meta Pixel Code (KEEP) -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -42,90 +42,89 @@
 
   <style>
     :root{
-      --primary:#000;
-      --secondary:#fff;
+      --primary:#0b0c10;
       --accent:#c5a059;
+      --border: rgba(0,0,0,.08);
     }
+    html{ scroll-behavior:smooth; }
     body{
-      font-family:'Inter',sans-serif;
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--primary);
-      background:var(--secondary);
-      scroll-behavior:smooth;
-      padding-bottom:calc(86px + env(safe-area-inset-bottom)); /* prevents fixed bar overlap */
+      background:#fff;
+      overflow-x:hidden; /* prevents horizontal scroll on mobile */
     }
     h1,h2,h3,.font-serif{ font-family:'Playfair Display',serif; }
 
-    .hero-overlay{
-      background:linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.72));
-    }
+    /* iPhone form zoom fix */
+    input, select, textarea, button { font-size:16px; }
 
     .sticky-header{
-      backdrop-filter:blur(10px);
-      background-color:rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.92);
     }
-
-    .card-shadow{ box-shadow:0 18px 60px rgba(0,0,0,.10); }
+    .hero-overlay{
+      background: linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.74));
+    }
+    .card-shadow{ box-shadow: 0 18px 60px rgba(0,0,0,.10); }
+    .soft-border{ border:1px solid var(--border); }
 
     .btn-primary{
-      background:#000;
-      color:#fff;
+      background:#000; color:#fff;
       border-radius:14px;
-      transition:all .2s ease;
+      transition: transform .18s ease, background .18s ease;
     }
-    .btn-primary:hover{ background:#1a1a1a; transform:translateY(-1px); }
+    .btn-primary:hover{ background:#1a1a1a; transform: translateY(-1px); }
 
     .btn-accent{
-      background:var(--accent);
-      color:#fff;
+      background: var(--accent); color:#fff;
       border-radius:14px;
-      transition:all .2s ease;
+      transition: transform .18s ease, background .18s ease;
     }
-    .btn-accent:hover{ background:#b08d4a; transform:translateY(-1px); }
+    .btn-accent:hover{ background:#b08d4a; transform: translateY(-1px); }
 
-    .soft-border{ border:1px solid rgba(0,0,0,.08); }
+    input:focus, select:focus{
+      outline:none!important;
+      border-color: rgba(0,0,0,.65)!important;
+      box-shadow: 0 0 0 3px rgba(197,160,89,.18)!important;
+    }
 
+    /* WhatsApp floating button: keep it, but never cover content */
     .whatsapp-float{
       position:fixed;
-      bottom:94px; /* stays above mobile CTA */
       right:18px;
+      bottom:18px;
+      width:56px; height:56px;
+      border-radius:999px;
       background:#25d366;
       color:#fff;
-      width:56px;
-      height:56px;
-      border-radius:50%;
-      display:flex;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+      z-index: 50;
+    }
+
+    /* Mobile typography tweaks */
+    @media (max-width: 768px){
+      .hero-title{ font-size: 2.15rem !important; line-height: 1.08 !important; }
+      .hero-sub{ font-size: 1.05rem !important; }
+    }
+
+    /* Modal */
+    .modal-backdrop{
+      position: fixed; inset:0;
+      background: rgba(0,0,0,.55);
+      display:none;
       align-items:center;
       justify-content:center;
-      box-shadow:0 10px 24px rgba(0,0,0,.25);
-      z-index:1300;
+      padding: 18px;
+      z-index: 9999;
     }
-
-    .mobile-cta{
-      position:fixed;
-      left:0; right:0; bottom:0;
-      padding:12px 12px calc(14px + env(safe-area-inset-bottom));
-      background:rgba(255,255,255,.94);
-      border-top:1px solid rgba(0,0,0,.08);
-      backdrop-filter:blur(10px);
-      z-index:1200;
-    }
-    @media (min-width:768px){ .mobile-cta{ display:none; } body{ padding-bottom:0; } .whatsapp-float{ bottom:22px; } }
-
-    /* Mobile-first form UX: prevent iOS zoom + thumb-friendly spacing */
-    input, select, button{ font-size:16px; } /* critical for iPhone */
-    input:focus, select:focus{
-      outline:none;
-      border-color:rgba(0,0,0,.65)!important;
-      box-shadow:0 0 0 3px rgba(197,160,89,.18)!important;
-    }
-
-    /* Hero sizing on mobile (avoid 90vh trap) */
-    @media (max-width:768px){
-      .hero-wrap{ min-height:auto!important; }
-      .hero-title{ font-size:2.25rem!important; line-height:1.08!important; }
-      .hero-sub{ font-size:1.05rem!important; }
-      .hero-text{ text-align:center; }
-      .hero-actions{ justify-content:center; }
+    .modal{
+      width:100%;
+      max-width: 520px;
+      background:#fff;
+      border-radius: 18px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.35);
+      overflow:hidden;
     }
   </style>
 </head>
@@ -133,7 +132,7 @@
 <body>
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 sticky-header border-b border-gray-100">
+  <header class="sticky top-0 z-50 sticky-header border-b border-black/5">
     <div class="container mx-auto px-5 md:px-6 py-4 flex justify-between items-center">
       <div class="flex items-center gap-3">
         <div class="w-9 h-9 rounded-xl bg-black text-white flex items-center justify-center font-bold">B</div>
@@ -143,7 +142,7 @@
         </div>
       </div>
 
-      <nav class="hidden md:flex space-x-8 text-xs font-semibold uppercase tracking-[0.18em] text-gray-600">
+      <nav class="hidden md:flex items-center space-x-8 text-xs font-semibold uppercase tracking-[0.18em] text-gray-600">
         <a href="#why-uae" class="hover:text-black transition">Why UAE</a>
         <a href="#marjan" class="hover:text-black transition">Marjan Island</a>
         <a href="#deals" class="hover:text-black transition">Deals</a>
@@ -155,38 +154,41 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="relative hero-wrap flex items-center py-14 md:py-20">
-    <div class="absolute inset-0 z-0">
-      <img src="https://media.istockphoto.com/id/503984118/photo/wide-panoramic-view-of-dubai-marina-waterfront.jpg?s=612x612&w=0&k=20&c=VM8rrkiLjOD3PC-mCsKiPRAgnZZSpL-YtvL73dLms9Q=" alt="Dubai Skyline" class="w-full h-full object-cover">
+  <!-- Hero + Form (mobile-first stacking) -->
+  <section class="relative">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1526495124232-a04e1849168c?q=80&w=2000&auto=format&fit=crop"
+           alt="Dubai skyline"
+           class="w-full h-full object-cover">
       <div class="absolute inset-0 hero-overlay"></div>
     </div>
 
-    <div class="container mx-auto px-5 md:px-6 relative z-10">
-      <div class="grid lg:grid-cols-12 gap-10 items-center">
-        <div class="lg:col-span-7 text-white hero-text">
-          <div class="inline-flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-white/80 mb-6">
+    <div class="relative z-10 container mx-auto px-5 md:px-6 py-12 md:py-20">
+      <div class="grid lg:grid-cols-12 gap-10 items-start">
+        <!-- Copy -->
+        <div class="lg:col-span-7 text-white text-center md:text-left">
+          <div class="inline-flex flex-wrap items-center justify-center md:justify-start gap-2 text-[11px] uppercase tracking-[0.22em] text-white/80 mb-6">
             <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">Updated weekly</span>
             <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">Remote buying support</span>
             <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">Canada-friendly hours</span>
           </div>
 
-          <h1 class="hero-title text-4xl md:text-6xl font-bold leading-[1.05] mb-6">
+          <h1 class="hero-title text-4xl md:text-6xl font-bold leading-[1.05] mb-5">
             UAE Real Estate Deals — curated for Canadian investors.
           </h1>
 
-          <p class="hero-sub text-lg md:text-xl font-light mb-8 opacity-90 max-w-2xl mx-auto md:mx-0">
-            Get a shortlist matched to your budget, payment plans, and rental strategy — across Dubai and Marjan Island (RAK).
+          <p class="hero-sub text-lg md:text-xl font-light mb-8 text-white/90 max-w-2xl mx-auto md:mx-0">
+            A shortlist matched to your budget, payment plans, and rental strategy — across Dubai and Marjan Island (RAK).
           </p>
 
-          <div class="flex flex-wrap gap-4 text-[12px] font-semibold uppercase tracking-[0.18em] opacity-90 hero-actions">
-            <span class="text-white/85">• Transparent process</span>
-            <span class="text-white/85">• Deal-by-deal assumptions</span>
-            <span class="text-white/85">• WhatsApp-first support</span>
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start text-[12px] font-semibold uppercase tracking-[0.16em] text-white/85">
+            <span>• Transparent process</span>
+            <span>• Deal-by-deal assumptions</span>
+            <span>• WhatsApp-first support</span>
           </div>
 
-          <div class="mt-10 flex flex-col sm:flex-row gap-4 hero-actions">
-            <a href="#lead-form" class="btn-accent px-8 py-4 font-bold uppercase tracking-widest inline-block text-center">Get Deal List</a>
+          <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a href="#lead-form" class="btn-accent px-8 py-4 font-bold uppercase tracking-widest text-center">Get Deal List</a>
             <a href="#marjan" class="border border-white/60 px-8 py-4 font-bold uppercase tracking-widest hover:bg-white hover:text-black transition text-center rounded-[14px]">Marjan Island Spotlight</a>
           </div>
 
@@ -195,85 +197,97 @@
           </p>
         </div>
 
-        <!-- Lead Form -->
-        <div id="lead-form" class="lg:col-span-5 w-full max-w-md bg-white p-7 md:p-8 card-shadow rounded-2xl soft-border">
-          <h3 class="text-2xl font-bold mb-2">Get the UAE Investor Deal List</h3>
-          <p class="text-gray-500 text-sm mb-6">Canada Edition • Updated Weekly</p>
+        <!-- Form -->
+        <div id="lead-form" class="lg:col-span-5">
+          <div class="w-full max-w-xl lg:max-w-md mx-auto bg-white p-7 md:p-8 rounded-2xl card-shadow soft-border">
+            <h3 class="text-2xl font-bold mb-2">Get the UAE Investor Deal List</h3>
+            <p class="text-gray-500 text-sm mb-6">Canada Edition • Updated Weekly</p>
 
-          <ul class="text-sm space-y-2 mb-6 text-gray-700 border-b border-gray-100 pb-6">
-            <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> 5–7 deals matched to your budget</li>
-            <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> Payment plan options (Off-plan + Ready)</li>
-            <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> Rental strategy notes (Short vs Long-term)</li>
-            <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> Fee checklist + clear next steps</li>
-          </ul>
+            <ul class="text-sm space-y-2 mb-6 text-gray-700 border-b border-gray-100 pb-6">
+              <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> 5–7 deals matched to your budget</li>
+              <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> Payment plan options (Off-plan + Ready)</li>
+              <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> Rental strategy notes (Short vs Long-term)</li>
+              <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> Fee checklist + next steps</li>
+            </ul>
 
-          <form id="main-form" class="space-y-4" action="https://hooks.zapier.com/hooks/catch/26531273/ucwwa4w/" method="POST">
-            <!-- Hidden attribution fields (KEEP) -->
-            <input type="hidden" name="page_url" id="page_url">
-            <input type="hidden" name="utm_source" id="utm_source">
-            <input type="hidden" name="utm_medium" id="utm_medium">
-            <input type="hidden" name="utm_campaign" id="utm_campaign">
-            <input type="hidden" name="utm_content" id="utm_content">
-            <input type="hidden" name="utm_term" id="utm_term">
-            <input type="hidden" name="fbclid" id="fbclid">
-            <input type="hidden" name="fbp" id="fbp">
-            <input type="hidden" name="fbc" id="fbc">
+            <form id="main-form" class="space-y-4" action="https://hooks.zapier.com/hooks/catch/26531273/ucwwa4w/" method="POST">
+              <!-- Attribution Hidden Fields (KEEP) -->
+              <input type="hidden" name="page_url" id="page_url">
+              <input type="hidden" name="utm_source" id="utm_source">
+              <input type="hidden" name="utm_medium" id="utm_medium">
+              <input type="hidden" name="utm_campaign" id="utm_campaign">
+              <input type="hidden" name="utm_content" id="utm_content">
+              <input type="hidden" name="utm_term" id="utm_term">
+              <input type="hidden" name="fbclid" id="fbclid">
+              <input type="hidden" name="fbp" id="fbp">
+              <input type="hidden" name="fbc" id="fbc">
 
-            <input type="text" name="full_name" placeholder="Full Name" class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl" autocomplete="name" required>
-            <input type="email" name="email" placeholder="Email Address" class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl" autocomplete="email" required>
+              <input type="text" name="full_name" placeholder="Full Name"
+                     class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl"
+                     autocomplete="name" required>
 
-            <div class="flex gap-2">
-              <select name="country_code" class="p-3.5 border border-gray-200 bg-white outline-none w-28 rounded-xl" autocomplete="tel-country-code">
-                <option value="+1">+1 (CAN)</option>
-                <option value="+971">+971 (UAE)</option>
+              <input type="email" name="email" placeholder="Email Address"
+                     class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl"
+                     autocomplete="email" required>
+
+              <div class="flex gap-2">
+                <select name="country_code" class="p-3.5 border border-gray-200 bg-white outline-none w-28 rounded-xl" autocomplete="tel-country-code">
+                  <option value="+1">+1 (CAN)</option>
+                  <option value="+971">+971 (UAE)</option>
+                </select>
+                <input type="tel" name="phone" placeholder="Phone Number"
+                       class="flex-1 p-3.5 border border-gray-200 bg-white outline-none rounded-xl"
+                       inputmode="numeric" autocomplete="tel" required>
+              </div>
+
+              <select name="investor_type" class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl" required>
+                <option value="" disabled selected>Investor Type</option>
+                <option value="First-time">First-time Overseas Investor</option>
+                <option value="Experienced">Experienced Portfolio Builder</option>
+                <option value="Holiday Home">Holiday Home Buyer</option>
               </select>
-              <input type="tel" name="phone" placeholder="Phone Number" class="flex-1 p-3.5 border border-gray-200 bg-white outline-none rounded-xl" inputmode="numeric" autocomplete="tel" required>
+
+              <select name="budget" class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl" required>
+                <option value="" disabled selected>Budget Range (USD)</option>
+                <option value="200k-500k">$200k - $500k</option>
+                <option value="500k-1M">$500k - $1M</option>
+                <option value="1M-3M">$1M - $3M</option>
+                <option value="3M+">$3M+</option>
+              </select>
+
+              <input type="text" name="preferred_area" placeholder="Preferred Area (e.g. Marina, Downtown, Marjan)"
+                     class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl">
+
+              <select name="timeline" class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl" required>
+                <option value="" disabled selected>Timeline</option>
+                <option value="Immediate">Immediate (Next 30 days)</option>
+                <option value="1-3 Months">1-3 Months</option>
+                <option value="Researching">Just Researching</option>
+              </select>
+
+              <button id="submitBtn" type="submit" class="w-full btn-primary py-4 font-bold uppercase tracking-widest">
+                Get UAE Deal List
+              </button>
+
+              <p class="text-[10px] text-gray-400 text-center mt-4">
+                By submitting, you agree to be contacted regarding UAE real estate opportunities. We respect your privacy.
+              </p>
+            </form>
+
+            <div class="mt-4 text-[11px] text-gray-500">
+              Prefer WhatsApp?
+              <a class="font-bold underline" target="_blank"
+                 href="https://wa.me/971504890065?text=Hi%20BuyUAEProperties,%20I%27m%20a%20Canadian%20investor%20interested%20in%20Dubai%20and%20Marjan%20Island%20RAK.%20Please%20share%20options.">
+                Message us here
+              </a>.
             </div>
-
-            <select name="investor_type" class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl" required>
-              <option value="" disabled selected>Investor Type</option>
-              <option value="First-time">First-time Overseas Investor</option>
-              <option value="Experienced">Experienced Portfolio Builder</option>
-              <option value="Holiday Home">Holiday Home Buyer</option>
-            </select>
-
-            <select name="budget" class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl" required>
-              <option value="" disabled selected>Budget Range (USD)</option>
-              <option value="200k-500k">$200k - $500k</option>
-              <option value="500k-1M">$500k - $1M</option>
-              <option value="1M-3M">$1M - $3M</option>
-              <option value="3M+">$3M+</option>
-            </select>
-
-            <input type="text" name="preferred_area" placeholder="Preferred Area (e.g. Marina, Downtown, Marjan)" class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl">
-
-            <select name="timeline" class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl" required>
-              <option value="" disabled selected>Timeline</option>
-              <option value="Immediate">Immediate (Next 30 days)</option>
-              <option value="1-3 Months">1-3 Months</option>
-              <option value="Researching">Just Researching</option>
-            </select>
-
-            <button id="submitBtn" type="submit" class="w-full btn-primary py-4 font-bold uppercase tracking-widest">Get UAE Deal List</button>
-
-            <p class="text-[10px] text-gray-400 text-center mt-4">
-              By submitting, you agree to be contacted regarding UAE real estate opportunities. We respect your privacy.
-            </p>
-          </form>
-
-          <div class="mt-4 text-[11px] text-gray-500">
-            Prefer WhatsApp?
-            <a class="font-bold underline" target="_blank"
-               href="https://wa.me/971504890065?text=Hi%20BuyUAEProperties,%20I%27m%20a%20Canadian%20investor%20interested%20in%20Dubai%20and%20Marjan%20Island%20RAK.%20Please%20share%20options.">
-              Message us here
-            </a>.
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Process standards -->
+  <!-- Process Standards -->
   <section class="bg-gray-50 py-10 border-y border-gray-100">
     <div class="container mx-auto px-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-8">
@@ -318,7 +332,7 @@
     </div>
   </section>
 
-  <!-- Marjan spotlight -->
+  <!-- Marjan -->
   <section id="marjan" class="py-20 md:py-24 bg-gray-50 border-y border-gray-100">
     <div class="container mx-auto px-6">
       <div class="grid lg:grid-cols-12 gap-8 md:gap-10 items-center">
@@ -331,7 +345,7 @@
 
           <h2 class="text-4xl md:text-5xl font-bold mb-6">Marjan Island (RAK): A new waterfront investment hub.</h2>
           <p class="text-lg text-gray-600 mb-8">
-            Al Marjan Island is a master-planned coastal destination with growing hospitality and residential demand drivers. We can share strategy-led options near key tourism catalysts, including the Wynn development.
+            Al Marjan Island is a master-planned coastal destination with growing hospitality and residential demand drivers. We can share options aligned to investor goals and strategy-led assumptions.
           </p>
 
           <div class="space-y-4">
@@ -340,27 +354,25 @@
                 <div class="text-xl" style="color:var(--accent);">🏝️</div>
                 <div>
                   <h4 class="font-bold mb-1">Master-planned beachfront destination</h4>
-                  <p class="text-sm text-gray-600">Mix of residential, hospitality and leisure — positioned for tourism-linked strategies.</p>
+                  <p class="text-sm text-gray-600">Residential + hospitality + leisure — positioned for tourism-linked strategies.</p>
                 </div>
               </div>
             </div>
-
             <div class="p-5 bg-white border border-gray-100 card-shadow rounded-2xl">
               <div class="flex items-start gap-3">
                 <div class="text-xl" style="color:var(--accent);">🏗️</div>
                 <div>
-                  <h4 class="font-bold mb-1">Tourism catalyst nearby</h4>
-                  <p class="text-sm text-gray-600">We can share surrounding projects and assumptions (pricing, payment plans, rental approach) to evaluate fit.</p>
+                  <h4 class="font-bold mb-1">Tourism catalysts</h4>
+                  <p class="text-sm text-gray-600">We share deal-by-deal assumptions (pricing, payment plans, rental approach) to evaluate fit.</p>
                 </div>
               </div>
             </div>
-
             <div class="p-5 bg-white border border-gray-100 card-shadow rounded-2xl">
               <div class="flex items-start gap-3">
                 <div class="text-xl" style="color:var(--accent);">📌</div>
                 <div>
                   <h4 class="font-bold mb-1">No hype — just clarity</h4>
-                  <p class="text-sm text-gray-600">Deal-by-deal details so you can compare Dubai vs RAK options confidently.</p>
+                  <p class="text-sm text-gray-600">Compare Dubai vs RAK options confidently with transparent next steps.</p>
                 </div>
               </div>
             </div>
@@ -379,7 +391,8 @@
         <div class="lg:col-span-6">
           <div class="relative overflow-hidden bg-black card-shadow rounded-2xl">
             <div class="absolute inset-0">
-              <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop" alt="UAE waterfront" class="w-full h-full object-cover opacity-80">
+              <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop"
+                   alt="UAE waterfront" class="w-full h-full object-cover opacity-80">
               <div class="absolute inset-0 hero-overlay"></div>
             </div>
             <div class="relative p-7 md:p-10 text-white">
@@ -393,13 +406,13 @@
     </div>
   </section>
 
-  <!-- Deals -->
+  <!-- Deals (light) -->
   <section id="deals" class="py-20 md:py-24 bg-white">
     <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-10 md:mb-12">
+      <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-10">
         <div>
           <h2 class="text-4xl font-bold mb-3">Featured Opportunities.</h2>
-          <p class="text-gray-600">Hand-picked for Canadian investor profiles (Dubai + RAK).</p>
+          <p class="text-gray-600">Examples only — request the full shortlist for current availability.</p>
         </div>
         <a href="#lead-form" class="hidden md:block text-sm font-bold border-b-2 border-black pb-1">REQUEST FULL LIST</a>
       </div>
@@ -412,10 +425,6 @@
           </div>
           <h4 class="text-xl font-bold mb-1">Downtown Luxury Suites</h4>
           <p class="text-gray-500 text-sm mb-4">Downtown Dubai • Starting from $450k</p>
-          <div class="flex justify-between text-xs font-bold border-t border-gray-100 pt-4 mb-6">
-            <span>70/30 Payment Plan</span>
-            <span style="color:var(--accent);">Best for: Appreciation</span>
-          </div>
           <a href="#lead-form" class="w-full block text-center border border-black py-3 font-bold text-sm hover:bg-black hover:text-white transition rounded-xl">Request Full Details</a>
         </div>
 
@@ -426,10 +435,6 @@
           </div>
           <h4 class="text-xl font-bold mb-1">Waterfront Residences</h4>
           <p class="text-gray-500 text-sm mb-4">Palm Jumeirah • Starting from $1.2M</p>
-          <div class="flex justify-between text-xs font-bold border-t border-gray-100 pt-4 mb-6">
-            <span>Post-Handover Plan</span>
-            <span style="color:var(--accent);">Best for: Holiday Home</span>
-          </div>
           <a href="#lead-form" class="w-full block text-center border border-black py-3 font-bold text-sm hover:bg-black hover:text-white transition rounded-xl">Request Full Details</a>
         </div>
 
@@ -440,10 +445,6 @@
           </div>
           <h4 class="text-xl font-bold mb-1">Marina Sky Apartments</h4>
           <p class="text-gray-500 text-sm mb-4">Dubai Marina • Starting from $380k</p>
-          <div class="flex justify-between text-xs font-bold border-t border-gray-100 pt-4 mb-6">
-            <span>50/50 Payment Plan</span>
-            <span style="color:var(--accent);">Best for: Rental Yield</span>
-          </div>
           <a href="#lead-form" class="w-full block text-center border border-black py-3 font-bold text-sm hover:bg-black hover:text-white transition rounded-xl">Request Full Details</a>
         </div>
       </div>
@@ -454,7 +455,6 @@
   <section id="process" class="py-20 md:py-24 bg-black text-white">
     <div class="container mx-auto px-6">
       <h2 class="text-4xl md:text-5xl font-bold mb-14 text-center">Buying from Canada Made Simple.</h2>
-
       <div class="grid md:grid-cols-5 gap-8">
         <div class="text-center">
           <div class="w-12 h-12 rounded-full border flex items-center justify-center mx-auto mb-5 font-bold" style="border-color:var(--accent);color:var(--accent);">1</div>
@@ -482,7 +482,6 @@
           <p class="text-xs text-gray-400">Setup guidance.</p>
         </div>
       </div>
-
       <div class="mt-14 text-center">
         <a href="#lead-form" class="btn-accent px-10 py-4 font-bold uppercase tracking-widest inline-block">Book a 15-Min Call</a>
       </div>
@@ -493,7 +492,6 @@
   <section id="faqs" class="py-20 md:py-24 bg-white">
     <div class="container mx-auto px-6 max-w-4xl">
       <h2 class="text-4xl font-bold mb-14 text-center">Frequently Asked Questions.</h2>
-
       <div class="space-y-6">
         <div class="border-b border-gray-100 pb-6">
           <h4 class="font-bold text-lg mb-2">Can I buy remotely from Canada?</h4>
@@ -505,7 +503,7 @@
         </div>
         <div class="border-b border-gray-100 pb-6">
           <h4 class="font-bold text-lg mb-2">Is Marjan Island (RAK) suitable for investors?</h4>
-          <p class="text-gray-600 text-sm">It can be for tourism-linked strategies. We share deal-by-deal assumptions and comparable data where available.</p>
+          <p class="text-gray-600 text-sm">It can be for tourism-linked strategies. We share deal-by-deal assumptions where available.</p>
         </div>
         <div>
           <h4 class="font-bold text-lg mb-2">How fast can I get options?</h4>
@@ -558,85 +556,145 @@
     </svg>
   </a>
 
-  <!-- Mobile Sticky CTA -->
-  <div class="mobile-cta">
-    <div class="container mx-auto px-2 flex gap-3">
-      <a href="#lead-form" class="flex-1 btn-primary py-3 text-center text-xs font-bold uppercase tracking-widest">Get Deal List</a>
-      <a target="_blank"
-         href="https://wa.me/971504890065?text=Hi%20BuyUAEProperties,%20I%27m%20a%20Canadian%20investor%20interested%20in%20Dubai%20and%20Marjan%20Island%20RAK.%20Please%20share%20options."
-         class="px-4 py-3 rounded-[14px] border border-black text-xs font-bold uppercase tracking-widest hover:bg-black hover:text-white transition">
-        WhatsApp
-      </a>
+  <!-- Success Modal (index-only, no extra files needed) -->
+  <div id="successBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+    <div class="modal">
+      <div class="p-6 md:p-8">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 id="successTitle" class="text-2xl font-bold mb-2">Request received ✅</h3>
+            <p class="text-gray-600 text-sm">
+              Thanks — we’ve received your details. We’ll send your deal list and follow up with matched options based on your budget and timeline.
+            </p>
+          </div>
+          <button id="closeModalBtn" class="p-2 rounded-lg hover:bg-gray-100" aria-label="Close">
+            ✕
+          </button>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="#lead-form" id="backToFormBtn" class="w-full sm:w-auto px-6 py-3 rounded-[14px] border border-black font-bold uppercase tracking-widest text-xs text-center hover:bg-black hover:text-white transition">
+            Back
+          </a>
+          <a target="_blank"
+             href="https://wa.me/971504890065?text=Hi%20BuyUAEProperties,%20I%20just%20requested%20the%20Deal%20List.%20Can%20you%20share%20a%20shortlist%20for%20my%20budget%20and%20timeline%3F"
+             class="w-full sm:w-auto btn-accent px-6 py-3 font-bold uppercase tracking-widest text-xs text-center">
+            WhatsApp now
+          </a>
+        </div>
+
+        <p class="text-[11px] text-gray-400 mt-5">
+          Disclaimer: Information only — not financial, legal, or tax advice.
+        </p>
+      </div>
     </div>
   </div>
 
   <script>
-    // Attribution & hidden fields (KEEP)
+    // Attribution & Hidden Fields Logic (KEEP)
     function getCookie(name) {
       let value = "; " + document.cookie;
       let parts = value.split("; " + name + "=");
-      if (parts.length == 2) return parts.pop().split(";").shift();
+      if (parts.length === 2) return parts.pop().split(";").shift();
       return "";
     }
 
     function fillAttributionFields() {
       const urlParams = new URLSearchParams(window.location.search);
-      document.getElementById("page_url").value = window.location.href;
 
-      const utms = ["source","medium","campaign","content","term"];
+      document.getElementById('page_url').value = window.location.href;
+
+      const utms = ['source', 'medium', 'campaign', 'content', 'term'];
       utms.forEach(utm => {
-        const val = urlParams.get("utm_" + utm);
-        if (val) document.getElementById("utm_" + utm).value = val;
+        const val = urlParams.get('utm_' + utm);
+        if (val) document.getElementById('utm_' + utm).value = val;
       });
 
-      const fbclid = urlParams.get("fbclid");
+      const fbclid = urlParams.get('fbclid');
       if (fbclid) {
-        document.getElementById("fbclid").value = fbclid;
-        document.getElementById("fbc").value = "fb.1." + Date.now() + "." + fbclid;
+        document.getElementById('fbclid').value = fbclid;
+        document.getElementById('fbc').value = "fb.1." + Date.now() + "." + fbclid;
       }
 
-      const fbp = getCookie("_fbp");
-      if (fbp) document.getElementById("fbp").value = fbp;
+      const fbp = getCookie('_fbp');
+      if (fbp) document.getElementById('fbp').value = fbp;
     }
 
-    window.addEventListener("DOMContentLoaded", fillAttributionFields);
+    window.addEventListener('DOMContentLoaded', fillAttributionFields);
 
-    // Form submit to Zapier (KEEP) + redirect
-    document.getElementById("main-form").addEventListener("submit", async function(e){
+    // Success modal helpers
+    const successBackdrop = document.getElementById("successBackdrop");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    const backToFormBtn = document.getElementById("backToFormBtn");
+
+    function openSuccessModal(){
+      successBackdrop.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+    function closeSuccessModal(){
+      successBackdrop.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    closeModalBtn.addEventListener("click", closeSuccessModal);
+    successBackdrop.addEventListener("click", (e) => {
+      if (e.target === successBackdrop) closeSuccessModal();
+    });
+    backToFormBtn.addEventListener("click", () => {
+      closeSuccessModal();
+      document.getElementById("lead-form").scrollIntoView({behavior:"smooth"});
+    });
+
+    // Form Submission (KEEP Zapier webhook, no-cors pattern)
+    document.getElementById('main-form').addEventListener('submit', async function(e) {
       e.preventDefault();
 
       const form = this;
-      const submitBtn = document.getElementById("submitBtn");
-      const originalText = submitBtn.innerText;
+      const submitBtn = document.getElementById('submitBtn');
+      const originalBtnText = submitBtn.innerText;
 
-      submitBtn.innerText = "SENDING...";
+      submitBtn.innerText = 'SENDING...';
       submitBtn.disabled = true;
 
       const formData = new FormData(form);
       const data = Object.fromEntries(formData.entries());
 
-      // sanitize phone lightly
+      // Sanitize phone a bit (helps mobile users who type spaces/dashes)
       if (data.phone) data.phone = String(data.phone).replace(/[^\d]/g, "");
 
       try {
-        const zapierUrl = "https://hooks.zapier.com/hooks/catch/26531273/ucwwa4w/";
+        const zapierUrl = 'https://hooks.zapier.com/hooks/catch/26531273/ucwwa4w/';
+
         await fetch(zapierUrl, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data)
+          method: 'POST',
+          mode: 'no-cors',
+          body: JSON.stringify(data),
+          headers: { 'Content-Type': 'application/json' }
         });
 
-        // Redirect (works well for static sites)
-        window.location.assign("thank-you.html");
-      } catch (err) {
-        console.error(err);
-        alert("Error submitting. Please try again or message us on WhatsApp.");
-        submitBtn.innerText = originalText;
+        // ✅ Track Lead (index-only, no thank-you page needed)
+        if (typeof fbq === "function") {
+          fbq('track', 'Lead');
+        }
+
+        // Show success modal
+        openSuccessModal();
+
+        // Reset form
+        form.reset();
+        fillAttributionFields();
+
+        // Restore button
+        submitBtn.innerText = originalBtnText;
+        submitBtn.disabled = false;
+
+      } catch (error) {
+        console.error('Submission error:', error);
+        alert('There was an error submitting your request. Please try again or contact us via WhatsApp.');
+        submitBtn.innerText = originalBtnText;
         submitBtn.disabled = false;
       }
     });
   </script>
-
 </body>
 </html>
