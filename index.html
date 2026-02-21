@@ -1,68 +1,753 @@
-<section id="top" class="relative">
-  <!-- Background -->
-  <div class="absolute inset-0">
-    <img
-      src="https://images.unsplash.com/photo-1526495124232-a04e1849168c?q=80&w=2000&auto=format&fit=crop"
-      alt="Dubai skyline"
-      class="w-full h-full object-cover"
-    />
-    <div class="absolute inset-0 hero-overlay"></div>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Dubai & RAK Real Estate for Canadian Investors | BuyUAEProperties</title>
+  <meta name="description" content="Exclusive Dubai & Ras Al Khaimah property investment opportunities for Canadians. Get curated deal lists, remote buying support, and rental strategies. Invest from Toronto, Vancouver, and across Canada." />
+  <meta name="keywords" content="Dubai real estate for Canadians, invest in Dubai property from Canada, Ras Al Khaimah investment, Marjan Island properties, Wynn RAK, UAE property investment" />
 
-  <!-- Content -->
-  <div class="relative z-10 wrap py-10 sm:py-12 md:py-16 lg:py-20">
-    <div class="grid lg:grid-cols-12 gap-8 md:gap-10 items-center">
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Dubai & RAK Real Estate for Canadian Investors | BuyUAEProperties" />
+  <meta property="og:description" content="Curated Dubai + Marjan Island (RAK) opportunities with end-to-end support for Canadian investors." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1526495124232-a04e1849168c?q=80&w=1600&auto=format&fit=crop" />
+  <meta property="og:url" content="https://aderu3001.github.io/buyuaeproperties/" />
+  <meta property="og:type" content="website" />
 
-      <!-- Copy -->
-      <div class="lg:col-span-7 text-white text-center md:text-left">
-        <div class="inline-flex flex-wrap items-center justify-center md:justify-start gap-2 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-white/80 mb-5">
-          <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">Updated weekly</span>
-          <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">Remote buying support</span>
-          <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">Canada-friendly hours</span>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- ✅ Meta Pixel Code (KEEP) -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1232553594644446');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1232553594644446&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    :root{
+      --primary:#0b0c10;
+      --accent:#c5a059;
+      --border:rgba(0,0,0,.08);
+    }
+
+    /* ✅ Fix for "shifted/zoomed to the right" (horizontal overflow) */
+    * { box-sizing: border-box; }
+    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+    img, svg, video { max-width: 100%; height: auto; }
+
+    body{
+      font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--primary);
+      background:#fff;
+      -webkit-text-size-adjust:100%;
+      text-rendering:optimizeLegibility;
+    }
+    h1,h2,h3,.font-serif { font-family:'Playfair Display',serif; }
+    html { scroll-behavior: smooth; }
+
+    /* Consistent wrapper */
+    .wrap{
+      max-width: 1120px;
+      margin: 0 auto;
+      padding-left: 16px;
+      padding-right: 16px;
+      width: 100%;
+    }
+
+    .sticky-header{
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.92);
+    }
+
+    .hero-overlay{
+      background: linear-gradient(rgba(0,0,0,.62), rgba(0,0,0,.74));
+    }
+
+    .card-shadow{ box-shadow: 0 18px 60px rgba(0,0,0,.10); }
+    .soft-border{ border:1px solid var(--border); }
+
+    /* ✅ iPhone form zoom fix */
+    input, select, textarea, button { font-size:16px; }
+
+    input:focus, select:focus, textarea:focus{
+      outline:none!important;
+      border-color: rgba(0,0,0,.65)!important;
+      box-shadow: 0 0 0 3px rgba(197,160,89,.18)!important;
+    }
+
+    .btn-primary{
+      background:#000; color:#fff;
+      border-radius:14px;
+      transition: transform .18s ease, background .18s ease;
+    }
+    .btn-primary:hover{ background:#1a1a1a; transform: translateY(-1px); }
+
+    .btn-accent{
+      background: var(--accent); color:#fff;
+      border-radius:14px;
+      transition: transform .18s ease, background .18s ease;
+    }
+    .btn-accent:hover{ background:#b08d4a; transform: translateY(-1px); }
+
+    /* WhatsApp floating button */
+    .whatsapp-float{
+      position:fixed;
+      right:16px;
+      bottom:16px;
+      width:56px; height:56px;
+      border-radius:999px;
+      background:#25d366;
+      color:#fff;
+      display:flex; align-items:center; justify-content:center;
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+      z-index: 60;
+    }
+
+    /* Mobile menu */
+    .menu-backdrop{
+      position: fixed; inset:0;
+      background: rgba(0,0,0,.55);
+      display:none;
+      z-index: 9990;
+    }
+    .menu-sheet{
+      position: fixed;
+      top: 0; right: 0;
+      height: 100vh;
+      width: min(86vw, 360px);
+      background: #fff;
+      box-shadow: -20px 0 80px rgba(0,0,0,.25);
+      transform: translateX(110%);
+      transition: transform .2s ease;
+      z-index: 9991;
+      padding: 18px;
+    }
+    .menu-open .menu-backdrop{ display:block; }
+    .menu-open .menu-sheet{ transform: translateX(0); }
+
+    /* Success modal */
+    .modal-backdrop{
+      position: fixed; inset:0;
+      background: rgba(0,0,0,.55);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+      z-index: 9999;
+    }
+    .modal{
+      width:100%;
+      max-width: 520px;
+      background:#fff;
+      border-radius: 18px;
+      box-shadow: 0 30px 90px rgba(0,0,0,.35);
+      overflow:hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 sticky-header border-b border-black/5">
+    <div class="wrap py-4 flex items-center justify-between gap-4">
+      <a href="#top" class="flex items-center gap-3 min-w-0">
+        <div class="w-9 h-9 rounded-xl bg-black text-white flex items-center justify-center font-bold shrink-0">B</div>
+        <div class="leading-tight min-w-0">
+          <div class="text-lg md:text-xl font-bold tracking-tighter truncate">BuyUAEProperties</div>
+          <div class="text-[11px] text-gray-500 -mt-0.5">Canada → UAE Investor Desk</div>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-[0.18em] text-gray-600 whitespace-nowrap">
+        <a href="#why-uae" class="hover:text-black transition">Why UAE</a>
+        <a href="#marjan" class="hover:text-black transition">Marjan Island</a>
+        <a href="#deals" class="hover:text-black transition">Deals</a>
+        <a href="#process" class="hover:text-black transition">Process</a>
+        <a href="#faqs" class="hover:text-black transition">FAQs</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="#lead-form" class="hidden sm:inline-flex btn-primary px-5 py-2.5 text-xs font-bold uppercase tracking-[0.18em] card-shadow">
+          Get Deal List
+        </a>
+
+        <!-- Mobile hamburger -->
+        <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-black/10 hover:bg-black/5" aria-label="Open menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="#111827" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div id="menuBackdrop" class="menu-backdrop"></div>
+  <aside id="menuSheet" class="menu-sheet" aria-label="Mobile menu">
+    <div class="flex items-center justify-between">
+      <div class="font-bold">Menu</div>
+      <button id="menuClose" class="p-2 rounded-xl border border-black/10 hover:bg-black/5" aria-label="Close menu">✕</button>
+    </div>
+    <div class="mt-5 space-y-3 text-sm font-semibold">
+      <a class="block p-3 rounded-xl hover:bg-black/5" href="#why-uae">Why UAE</a>
+      <a class="block p-3 rounded-xl hover:bg-black/5" href="#marjan">Marjan Island</a>
+      <a class="block p-3 rounded-xl hover:bg-black/5" href="#deals">Deals</a>
+      <a class="block p-3 rounded-xl hover:bg-black/5" href="#process">Process</a>
+      <a class="block p-3 rounded-xl hover:bg-black/5" href="#faqs">FAQs</a>
+      <a class="block p-3 rounded-xl bg-black text-white text-center uppercase tracking-widest text-xs" href="#lead-form">Get Deal List</a>
+    </div>
+  </aside>
+
+  <!-- ✅ HERO (resized for mobile + centered correctly) -->
+  <section id="top" class="relative">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1526495124232-a04e1849168c?q=80&w=2000&auto=format&fit=crop"
+        alt="Dubai skyline"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 hero-overlay"></div>
+    </div>
+
+    <!-- Smaller padding on mobile, bigger on desktop -->
+    <div class="relative z-10 wrap py-10 sm:py-12 md:py-16 lg:py-20">
+      <div class="grid lg:grid-cols-12 gap-8 md:gap-10 items-center">
+        <!-- Copy -->
+        <div class="lg:col-span-7 text-white text-center md:text-left">
+          <div class="inline-flex flex-wrap items-center justify-center md:justify-start gap-2 text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-white/80 mb-5">
+            <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">Updated weekly</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">Remote buying support</span>
+            <span class="px-3 py-1 rounded-full bg-white/10 border border-white/10">Canada-friendly hours</span>
+          </div>
+
+          <!-- IMPORTANT: no leading spaces before UAE -->
+          <h1 class="text-[2.05rem] sm:text-4xl md:text-6xl font-bold leading-[1.05] mb-4 max-w-2xl mx-auto md:mx-0">
+            UAE Real Estate Deals — curated for Canadian investors.
+          </h1>
+
+          <p class="text-[1.02rem] sm:text-lg md:text-xl font-light mb-6 text-white/90 max-w-2xl mx-auto md:mx-0">
+            Get a shortlist matched to your budget, payment plans, and rental strategy — across Dubai and Marjan Island (RAK).
+          </p>
+
+          <div class="flex flex-wrap gap-3 justify-center md:justify-start text-[11px] sm:text-[12px] font-semibold uppercase tracking-[0.16em] text-white/85">
+            <span>• Transparent process</span>
+            <span>• Deal-by-deal assumptions</span>
+            <span>• WhatsApp-first support</span>
+          </div>
+
+          <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+            <a href="#lead-form" class="btn-accent px-7 py-3.5 font-bold uppercase tracking-widest text-center">Get Deal List</a>
+            <a href="#marjan" class="border border-white/60 px-7 py-3.5 font-bold uppercase tracking-widest hover:bg-white hover:text-black transition text-center rounded-[14px]">Marjan Island</a>
+          </div>
+
+          <p class="mt-5 text-[11px] text-white/65 italic">
+            Information only — not financial, legal, or tax advice.
+          </p>
         </div>
 
-        <h1 class="hero-title text-[2.05rem] sm:text-4xl md:text-6xl font-bold leading-[1.05] mb-4 max-w-2xl mx-auto md:mx-0">
-          UAE Real Estate Deals — curated for Canadian investors.
-        </h1>
+        <!-- Form -->
+        <div id="lead-form" class="lg:col-span-5">
+          <div class="w-full max-w-xl lg:max-w-md mx-auto bg-white p-6 sm:p-7 md:p-8 rounded-2xl card-shadow soft-border">
+            <h3 class="text-xl sm:text-2xl font-bold mb-2">Get the UAE Investor Deal List</h3>
+            <p class="text-gray-500 text-sm mb-5">Canada Edition • Updated Weekly</p>
 
-        <p class="hero-sub text-[1.02rem] sm:text-lg md:text-xl font-light mb-6 text-white/90 max-w-2xl mx-auto md:mx-0">
-          Get a shortlist matched to your budget, payment plans, and rental strategy — across Dubai and Marjan Island (RAK).
-        </p>
+            <ul class="text-sm space-y-2 mb-5 text-gray-700 border-b border-gray-100 pb-5">
+              <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> 5–7 deals matched to your budget</li>
+              <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> Payment plan options (Off-plan + Ready)</li>
+              <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> Rental strategy notes (Short vs Long-term)</li>
+              <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> Fee checklist + next steps</li>
+            </ul>
 
-        <div class="flex flex-wrap gap-3 justify-center md:justify-start text-[11px] sm:text-[12px] font-semibold uppercase tracking-[0.16em] text-white/85">
-          <span>• Transparent process</span>
-          <span>• Deal-by-deal assumptions</span>
-          <span>• WhatsApp-first support</span>
+            <form id="main-form" class="space-y-4" action="https://hooks.zapier.com/hooks/catch/26531273/ucwwa4w/" method="POST">
+              <!-- Attribution Hidden Fields (KEEP) -->
+              <input type="hidden" name="page_url" id="page_url">
+              <input type="hidden" name="utm_source" id="utm_source">
+              <input type="hidden" name="utm_medium" id="utm_medium">
+              <input type="hidden" name="utm_campaign" id="utm_campaign">
+              <input type="hidden" name="utm_content" id="utm_content">
+              <input type="hidden" name="utm_term" id="utm_term">
+              <input type="hidden" name="fbclid" id="fbclid">
+              <input type="hidden" name="fbp" id="fbp">
+              <input type="hidden" name="fbc" id="fbc">
+
+              <input type="text" name="full_name" placeholder="Full Name"
+                class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl"
+                autocomplete="name" required>
+
+              <input type="email" name="email" placeholder="Email Address"
+                class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl"
+                autocomplete="email" required>
+
+              <div class="flex gap-2">
+                <select name="country_code" class="p-3.5 border border-gray-200 bg-white outline-none w-28 rounded-xl" autocomplete="tel-country-code">
+                  <option value="+1">+1 (CAN)</option>
+                  <option value="+971">+971 (UAE)</option>
+                </select>
+                <input type="tel" name="phone" placeholder="Phone Number"
+                  class="flex-1 p-3.5 border border-gray-200 bg-white outline-none rounded-xl"
+                  inputmode="numeric" autocomplete="tel" required>
+              </div>
+
+              <select name="investor_type" class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl" required>
+                <option value="" disabled selected>Investor Type</option>
+                <option value="First-time">First-time Overseas Investor</option>
+                <option value="Experienced">Experienced Portfolio Builder</option>
+                <option value="Holiday Home">Holiday Home Buyer</option>
+              </select>
+
+              <select name="budget" class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl" required>
+                <option value="" disabled selected>Budget Range (USD)</option>
+                <option value="200k-500k">$200k - $500k</option>
+                <option value="500k-1M">$500k - $1M</option>
+                <option value="1M-3M">$1M - $3M</option>
+                <option value="3M+">$3M+</option>
+              </select>
+
+              <input type="text" name="preferred_area" placeholder="Preferred Area (e.g. Marina, Downtown, Marjan)"
+                class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl">
+
+              <select name="timeline" class="w-full p-3.5 border border-gray-200 bg-white outline-none rounded-xl" required>
+                <option value="" disabled selected>Timeline</option>
+                <option value="Immediate">Immediate (Next 30 days)</option>
+                <option value="1-3 Months">1–3 Months</option>
+                <option value="Researching">Just Researching</option>
+              </select>
+
+              <button id="submitBtn" type="submit" class="w-full btn-primary py-4 font-bold uppercase tracking-widest">
+                Get UAE Deal List
+              </button>
+
+              <p class="text-[10px] text-gray-400 text-center mt-4">
+                By submitting, you agree to be contacted regarding UAE real estate opportunities. We respect your privacy.
+              </p>
+            </form>
+
+            <div class="mt-4 text-[11px] text-gray-500">
+              Prefer WhatsApp?
+              <a class="font-bold underline" target="_blank"
+                href="https://wa.me/971504890065?text=Hi%20BuyUAEProperties,%20I%27m%20a%20Canadian%20investor%20interested%20in%20Dubai%20and%20Marjan%20Island%20RAK.%20Please%20share%20options.">
+                Message us here
+              </a>.
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
-          <a href="#lead-form" class="btn-accent px-7 py-3.5 font-bold uppercase tracking-widest text-center">Get Deal List</a>
-          <a href="#marjan" class="border border-white/60 px-7 py-3.5 font-bold uppercase tracking-widest hover:bg-white hover:text-black transition text-center rounded-[14px]">Marjan Island</a>
-        </div>
-
-        <p class="mt-5 text-[11px] text-white/65 italic">
-          Information only — not financial, legal, or tax advice.
-        </p>
+  <!-- Why UAE -->
+  <section id="why-uae" class="py-16 md:py-20 bg-white">
+    <div class="wrap">
+      <div class="max-w-3xl mb-10">
+        <h2 class="text-4xl md:text-5xl font-bold mb-5">Why Canadians are Choosing the UAE.</h2>
+        <p class="text-lg text-gray-600">Investor-friendly environment, modern infrastructure, and demand drivers across Dubai and Ras Al Khaimah.</p>
       </div>
 
-      <!-- Form (slightly tighter on mobile) -->
-      <div id="lead-form" class="lg:col-span-5">
-        <div class="w-full max-w-xl lg:max-w-md mx-auto bg-white p-6 sm:p-7 md:p-8 rounded-2xl card-shadow soft-border">
-          <h3 class="text-xl sm:text-2xl font-bold mb-2">Get the UAE Investor Deal List</h3>
-          <p class="text-gray-500 text-sm mb-5">Canada Edition • Updated Weekly</p>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="p-7 soft-border rounded-2xl card-shadow">
+          <div class="text-3xl mb-4" style="color:var(--accent);">01</div>
+          <h4 class="text-xl font-bold mb-3">Tax Efficiency (UAE)</h4>
+          <p class="text-gray-600 text-sm">The UAE has 0% personal income tax. Canadian tax obligations may still apply — consult your advisor.</p>
+        </div>
+        <div class="p-7 soft-border rounded-2xl card-shadow">
+          <div class="text-3xl mb-4" style="color:var(--accent);">02</div>
+          <h4 class="text-xl font-bold mb-3">Rental Demand</h4>
+          <p class="text-gray-600 text-sm">Yields vary by area and strategy. We share deal-by-deal assumptions for clarity.</p>
+        </div>
+        <div class="p-7 soft-border rounded-2xl card-shadow">
+          <div class="text-3xl mb-4" style="color:var(--accent);">03</div>
+          <h4 class="text-xl font-bold mb-3">Global Connectivity</h4>
+          <p class="text-gray-600 text-sm">A global hub supporting tourism, business, and long-term demand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <ul class="text-sm space-y-2 mb-5 text-gray-700 border-b border-gray-100 pb-5">
-            <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> 5–7 deals matched to your budget</li>
-            <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> Payment plans (Off-plan + Ready)</li>
-            <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> Rental strategy notes</li>
-            <li class="flex items-start gap-2"><span class="text-[16px]" style="color:var(--accent);">✓</span> Fees + next steps</li>
-          </ul>
+  <!-- Marjan -->
+  <section id="marjan" class="py-16 md:py-20 bg-gray-50 border-y border-gray-100">
+    <div class="wrap">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-6">
+          <div class="inline-flex flex-wrap items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-4">
+            <span class="px-3 py-1 bg-white border border-gray-100 rounded-full">Ras Al Khaimah</span>
+            <span class="px-3 py-1 bg-white border border-gray-100 rounded-full">Marjan Island</span>
+            <span class="px-3 py-1 bg-white border border-gray-100 rounded-full">Near Wynn</span>
+          </div>
 
-          <!-- KEEP your form EXACTLY as-is below (same IDs, hidden fields, action, etc.) -->
-          <!-- Paste your existing <form id="main-form" ...> ... </form> here unchanged -->
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">Marjan Island (RAK): a waterfront investment hub.</h2>
+          <p class="text-lg text-gray-600 mb-7">
+            Master-planned coastal destination with a growing hospitality and residential pipeline. We can share strategy-led options and payment plans near key tourism catalysts.
+          </p>
+
+          <div class="space-y-4">
+            <div class="p-5 bg-white border border-gray-100 card-shadow rounded-2xl">
+              <div class="flex items-start gap-3">
+                <div class="text-xl" style="color:var(--accent);">🏝️</div>
+                <div>
+                  <h4 class="font-bold mb-1">Beachfront destination</h4>
+                  <p class="text-sm text-gray-600">Residential + hospitality + leisure — aligned to tourism-linked strategies.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-5 bg-white border border-gray-100 card-shadow rounded-2xl">
+              <div class="flex items-start gap-3">
+                <div class="text-xl" style="color:var(--accent);">📌</div>
+                <div>
+                  <h4 class="font-bold mb-1">Deal-by-deal clarity</h4>
+                  <p class="text-sm text-gray-600">Pricing, payment plan, and rental approach explained per opportunity.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-7 flex flex-col sm:flex-row gap-4">
+            <a href="#lead-form" class="btn-accent px-8 py-4 font-bold uppercase tracking-widest text-center">Get Marjan + Dubai Options</a>
+            <a target="_blank"
+              href="https://wa.me/971504890065?text=Hi%20BuyUAEProperties,%20I%27m%20interested%20in%20Marjan%20Island%20RAK%20near%20Wynn%20and%20Dubai%20options.%20Please%20share%20a%20shortlist."
+              class="border border-black px-8 py-4 font-bold uppercase tracking-widest hover:bg-black hover:text-white transition text-center rounded-[14px]">
+              WhatsApp about Marjan
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="relative overflow-hidden bg-black card-shadow rounded-2xl">
+            <div class="absolute inset-0">
+              <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=1600&auto=format&fit=crop"
+                   alt="UAE waterfront" class="w-full h-full object-cover opacity-80">
+              <div class="absolute inset-0 hero-overlay"></div>
+            </div>
+            <div class="relative p-7 md:p-10 text-white">
+              <h3 class="text-2xl md:text-3xl font-bold mb-3">Want a shortlist?</h3>
+              <p class="text-white/85 mb-6">Share budget + timeline and we’ll send matched options across Dubai and RAK.</p>
+              <a href="#lead-form" class="inline-block btn-primary px-8 py-4 font-bold uppercase tracking-widest">Request shortlist</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deals -->
+  <section id="deals" class="py-16 md:py-20 bg-white">
+    <div class="wrap">
+      <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-10">
+        <div>
+          <h2 class="text-4xl font-bold mb-3">Featured Opportunities.</h2>
+          <p class="text-gray-600">Examples only — request the full shortlist for current availability.</p>
+        </div>
+        <a href="#lead-form" class="hidden md:block text-sm font-bold border-b-2 border-black pb-1">REQUEST FULL LIST</a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="group">
+          <div class="relative overflow-hidden mb-4 aspect-[4/3] rounded-2xl">
+            <img src="https://www.icfurnishing.com/wp-content/uploads/2024/02/A-luxury-apartment-in-Burj-Royale-Downtown-Dubai.jpg" alt="Downtown Dubai" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+            <div class="absolute top-4 left-4 bg-black text-white text-[10px] px-3 py-1 font-bold uppercase tracking-widest rounded-full">High Demand</div>
+          </div>
+          <h4 class="text-xl font-bold mb-1">Downtown Luxury Suites</h4>
+          <p class="text-gray-500 text-sm mb-4">Downtown Dubai • Starting from $450k</p>
+          <a href="#lead-form" class="w-full block text-center border border-black py-3 font-bold text-sm hover:bg-black hover:text-white transition rounded-xl">Request Full Details</a>
+        </div>
+
+        <div class="group">
+          <div class="relative overflow-hidden mb-4 aspect-[4/3] rounded-2xl">
+            <img src="https://www.shutterstock.com/image-photo/dubai-luxury-villas-real-estate-260nw-2436373585.jpg" alt="Palm Jumeirah" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+            <div class="absolute top-4 left-4 bg-black text-white text-[10px] px-3 py-1 font-bold uppercase tracking-widest rounded-full">Waterfront</div>
+          </div>
+          <h4 class="text-xl font-bold mb-1">Waterfront Residences</h4>
+          <p class="text-gray-500 text-sm mb-4">Palm Jumeirah • Starting from $1.2M</p>
+          <a href="#lead-form" class="w-full block text-center border border-black py-3 font-bold text-sm hover:bg-black hover:text-white transition rounded-xl">Request Full Details</a>
+        </div>
+
+        <div class="group">
+          <div class="relative overflow-hidden mb-4 aspect-[4/3] rounded-2xl">
+            <img src="https://www.icfurnishing.com/wp-content/uploads/2024/08/A-large-apartment-design-in-Abu-Dhabi.jpg" alt="Dubai Marina" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+            <div class="absolute top-4 left-4 bg-black text-white text-[10px] px-3 py-1 font-bold uppercase tracking-widest rounded-full">Short-term</div>
+          </div>
+          <h4 class="text-xl font-bold mb-1">Marina Sky Apartments</h4>
+          <p class="text-gray-500 text-sm mb-4">Dubai Marina • Starting from $380k</p>
+          <a href="#lead-form" class="w-full block text-center border border-black py-3 font-bold text-sm hover:bg-black hover:text-white transition rounded-xl">Request Full Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="py-16 md:py-20 bg-black text-white">
+    <div class="wrap">
+      <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">Buying from Canada Made Simple.</h2>
+      <div class="grid md:grid-cols-5 gap-8">
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full border flex items-center justify-center mx-auto mb-5 font-bold" style="border-color:var(--accent);color:var(--accent);">1</div>
+          <h4 class="font-bold mb-2">Discovery Call</h4>
+          <p class="text-xs text-gray-400">Goals, budget, strategy.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full border flex items-center justify-center mx-auto mb-5 font-bold" style="border-color:var(--accent);color:var(--accent);">2</div>
+          <h4 class="font-bold mb-2">Curated Shortlist</h4>
+          <p class="text-xs text-gray-400">Matched opportunities.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full border flex items-center justify-center mx-auto mb-5 font-bold" style="border-color:var(--accent);color:var(--accent);">3</div>
+          <h4 class="font-bold mb-2">Remote Viewing</h4>
+          <p class="text-xs text-gray-400">Video tours + walkthroughs.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full border flex items-center justify-center mx-auto mb-5 font-bold" style="border-color:var(--accent);color:var(--accent);">4</div>
+          <h4 class="font-bold mb-2">Paperwork</h4>
+          <p class="text-xs text-gray-400">Coordinated remotely.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-12 h-12 rounded-full border flex items-center justify-center mx-auto mb-5 font-bold" style="border-color:var(--accent);color:var(--accent);">5</div>
+          <h4 class="font-bold mb-2">Handover</h4>
+          <p class="text-xs text-gray-400">Setup guidance.</p>
+        </div>
+      </div>
+      <div class="mt-12 text-center">
+        <a href="#lead-form" class="btn-accent px-10 py-4 font-bold uppercase tracking-widest inline-block">Book a 15-Min Call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section id="faqs" class="py-16 md:py-20 bg-white">
+    <div class="wrap">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-4xl font-bold mb-12 text-center">Frequently Asked Questions.</h2>
+
+        <div class="space-y-6">
+          <div class="border-b border-gray-100 pb-6">
+            <h4 class="font-bold text-lg mb-2">Can I buy remotely from Canada?</h4>
+            <p class="text-gray-600 text-sm">Yes. We coordinate tours and documentation workflows remotely depending on the project.</p>
+          </div>
+          <div class="border-b border-gray-100 pb-6">
+            <h4 class="font-bold text-lg mb-2">What are typical payment plans?</h4>
+            <p class="text-gray-600 text-sm">Many projects offer interest-free plans (60/40, 70/30, post-handover). Terms vary by developer.</p>
+          </div>
+          <div class="border-b border-gray-100 pb-6">
+            <h4 class="font-bold text-lg mb-2">Is Marjan Island (RAK) suitable for investors?</h4>
+            <p class="text-gray-600 text-sm">It can be for tourism-linked strategies. We share deal-by-deal assumptions where available.</p>
+          </div>
+          <div>
+            <h4 class="font-bold text-lg mb-2">How fast can I get options?</h4>
+            <p class="text-gray-600 text-sm">Typically within 24–48 hours after you submit your requirements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-white border-t border-gray-100">
+    <div class="wrap">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-10">
+        <div class="max-w-sm">
+          <div class="text-2xl font-bold tracking-tighter mb-4">BuyUAEProperties</div>
+          <p class="text-gray-500 text-sm">Strategy-led shortlists for Canadians investing in Dubai and RAK. Transparent process, remote buying support.</p>
+        </div>
+        <div class="grid grid-cols-2 gap-12">
+          <div>
+            <h5 class="font-bold mb-4 uppercase text-xs tracking-widest">Quick Links</h5>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li><a href="#why-uae" class="hover:text-black">Why UAE</a></li>
+              <li><a href="#marjan" class="hover:text-black">Marjan Island</a></li>
+              <li><a href="#deals" class="hover:text-black">Deals</a></li>
+              <li><a href="#process" class="hover:text-black">Process</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="font-bold mb-4 uppercase text-xs tracking-widest">Legal</h5>
+            <ul class="text-sm text-gray-500 space-y-2">
+              <li><a href="#" class="hover:text-black">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-black">Terms of Service</a></li>
+            </ul>
+          </div>
         </div>
       </div>
 
+      <div class="pt-10 border-t border-gray-100 text-[10px] text-gray-400 leading-relaxed">
+        <p class="mb-4">DISCLAIMER: Information only; not financial, legal, or tax advice. Real estate investments carry risk. Consult professional advisors before making decisions.</p>
+        <p>© 2026 BuyUAEProperties. All rights reserved. Prices and availability are subject to change.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/971504890065?text=Hi%20BuyUAEProperties,%20I%27m%20a%20Canadian%20investor%20interested%20in%20Dubai%20and%20Marjan%20Island%20RAK.%20Please%20share%20options."
+     class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.672 1.433 5.661 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- Success Modal -->
+  <div id="successBackdrop" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="p-6 md:p-8">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <h3 class="text-2xl font-bold mb-2">Request received ✅</h3>
+            <p class="text-gray-600 text-sm">Thanks — we’ve received your details. We’ll send your deal list and follow up with matched options based on your budget and timeline.</p>
+          </div>
+          <button id="closeModalBtn" class="p-2 rounded-xl border border-black/10 hover:bg-black/5" aria-label="Close">✕</button>
+        </div>
+
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a href="#lead-form" id="backToFormBtn" class="w-full sm:w-auto px-6 py-3 rounded-[14px] border border-black font-bold uppercase tracking-widest text-xs text-center hover:bg-black hover:text-white transition">
+            Back
+          </a>
+          <a target="_blank"
+             href="https://wa.me/971504890065?text=Hi%20BuyUAEProperties,%20I%20just%20requested%20the%20Deal%20List.%20Can%20you%20share%20a%20shortlist%20for%20my%20budget%20and%20timeline%3F"
+             class="w-full sm:w-auto btn-accent px-6 py-3 font-bold uppercase tracking-widest text-xs text-center">
+            WhatsApp now
+          </a>
+        </div>
+
+        <p class="text-[11px] text-gray-400 mt-5">Disclaimer: Information only — not financial, legal, or tax advice.</p>
+      </div>
     </div>
   </div>
-</section>
+
+  <script>
+    // Mobile menu
+    const bodyEl = document.body;
+    const menuBtn = document.getElementById("menuBtn");
+    const menuClose = document.getElementById("menuClose");
+    const menuBackdrop = document.getElementById("menuBackdrop");
+    const menuSheet = document.getElementById("menuSheet");
+
+    function openMenu(){
+      bodyEl.classList.add("menu-open");
+      bodyEl.style.overflow = "hidden";
+    }
+    function closeMenu(){
+      bodyEl.classList.remove("menu-open");
+      bodyEl.style.overflow = "auto";
+    }
+
+    menuBtn?.addEventListener("click", openMenu);
+    menuClose?.addEventListener("click", closeMenu);
+    menuBackdrop?.addEventListener("click", closeMenu);
+    menuSheet?.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+
+    // Attribution fields (KEEP)
+    function getCookie(name) {
+      let value = "; " + document.cookie;
+      let parts = value.split("; " + name + "=");
+      if (parts.length === 2) return parts.pop().split(";").shift();
+      return "";
+    }
+
+    function fillAttributionFields() {
+      const urlParams = new URLSearchParams(window.location.search);
+
+      const pageUrlEl = document.getElementById("page_url");
+      if (pageUrlEl) pageUrlEl.value = window.location.href;
+
+      ["source","medium","campaign","content","term"].forEach(utm => {
+        const val = urlParams.get("utm_" + utm);
+        const el = document.getElementById("utm_" + utm);
+        if (val && el) el.value = val;
+      });
+
+      const fbclid = urlParams.get("fbclid");
+      if (fbclid) {
+        const fbclidEl = document.getElementById("fbclid");
+        const fbcEl = document.getElementById("fbc");
+        if (fbclidEl) fbclidEl.value = fbclid;
+        if (fbcEl) fbcEl.value = "fb.1." + Date.now() + "." + fbclid;
+      }
+
+      const fbp = getCookie("_fbp");
+      const fbpEl = document.getElementById("fbp");
+      if (fbp && fbpEl) fbpEl.value = fbp;
+    }
+
+    window.addEventListener("DOMContentLoaded", fillAttributionFields);
+
+    // Success modal
+    const successBackdrop = document.getElementById("successBackdrop");
+    const closeModalBtn = document.getElementById("closeModalBtn");
+    const backToFormBtn = document.getElementById("backToFormBtn");
+
+    function openSuccessModal(){
+      successBackdrop.style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+    function closeSuccessModal(){
+      successBackdrop.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+
+    closeModalBtn?.addEventListener("click", closeSuccessModal);
+    successBackdrop?.addEventListener("click", (e) => { if (e.target === successBackdrop) closeSuccessModal(); });
+    backToFormBtn?.addEventListener("click", () => { closeSuccessModal(); });
+
+    // Form submission to Zapier (KEEP) + Lead event
+    document.getElementById("main-form").addEventListener("submit", async function(e){
+      e.preventDefault();
+
+      const form = this;
+      const submitBtn = document.getElementById("submitBtn");
+      const originalText = submitBtn.innerText;
+
+      submitBtn.innerText = "SENDING...";
+      submitBtn.disabled = true;
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      // sanitize phone (helps mobile users)
+      if (data.phone) data.phone = String(data.phone).replace(/[^\d]/g, "");
+
+      try {
+        const zapierUrl = "https://hooks.zapier.com/hooks/catch/26531273/ucwwa4w/";
+
+        await fetch(zapierUrl, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        });
+
+        // ✅ Track Lead (works even without thank-you page)
+        if (typeof fbq === "function") fbq("track", "Lead");
+
+        openSuccessModal();
+        form.reset();
+        fillAttributionFields();
+
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+
+      } catch (err) {
+        console.error(err);
+        alert("Error submitting. Please try again or message us on WhatsApp.");
+        submitBtn.innerText = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
