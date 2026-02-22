@@ -1,0 +1,1 @@
+{"name": "buyuaeproperties", "version": "1.0.0", "description": "Real Estate Investment in Dubai & Ras Al Khaimah - UAE", "scripts": {"build": "tailwindcss -i ./input.css -o ./output.css", "watch": "tailwindcss -i ./input.css -o ./output.css --watch"}, "devDependencies": {"tailwindcss": "^3.4.1", "autoprefixer": "^10.4.17", "postcss": "^8.4.32"}}
