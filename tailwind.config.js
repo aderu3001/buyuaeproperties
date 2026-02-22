@@ -1,1 +1,6 @@
-export default { content: ["./*.html"], theme: { extend: {} }, plugins: [] }
+export default {
+  content: ["./*.html"],
+  theme: { extend: {} },
+  plugins: [],
+}
+
