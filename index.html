@@ -756,15 +756,7 @@
           body: JSON.stringify(data)
         });
 
-        // ✅ Track Lead (works even without thank-you page)
-        if (typeof fbq === "function") fbq("track", "Lead");
-
-        openSuccessModal();
-        form.reset();
-        fillAttributionFields();
-
-        submitBtn.innerText = originalText;
-        submitBtn.disabled = false;
+        window.location.href = "thank-you.html";
 
       } catch (err) {
         console.error(err);
